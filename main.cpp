@@ -29,7 +29,7 @@ int main()
                 {
                     cout << ultimoDia << endl;
                 }
-                
+
                 cout << "Elija una opcion 1 - para comida 2 - para recursos" << endl;
                 int respuesta;
                 cin >> respuesta;
@@ -84,7 +84,7 @@ int main()
                     case 4:
                         cout << "Usted recogio:" << endl;
                         break;
-                    
+
                     default:
                         break;
                     }
@@ -95,13 +95,13 @@ int main()
                     break;
                 }
             }
-            
+
             cout << "Fin de la etapa 1" << endl << "Comienzo de la segunda etapa: Construir una balsa" << endl;
             cout << "Tiene 6 dias para construir la balsa" << endl;
 
             // Inicio de la segunda etapa
             for (int i = 1; i < 7; i++){
-                
+
                 int balsa = 0;
 
                 cout << "Usted esta en el dia" << i << endl;
@@ -117,17 +117,17 @@ int main()
                     switch (respuesta)
                     {
                     case 1:
-                        
+
                         break;
-    
+
                     case 2:
-                        
+
                         break;
-    
+
                     case 3:
-                        
+
                         break;
-    
+
                     default:
                         break;
                     }
@@ -140,7 +140,7 @@ int main()
                     switch (opcion)
                     {
                     case 1:
-                        
+
                         break;
 
                     case 2:
@@ -148,17 +148,44 @@ int main()
                         break;
 
                     case 3:
-                    
+
                         break;
 
                     default:
                         break;
                     }
                 }
-                
+
                 cout << "Ha terminado la etapa 2" << endl;
             }
-            
+            cout<<"---------------------------"endl;
+            cout<<"Inicio de la etapa 3"<<endl;
+            cout<<"---------------------------"endl;
+
+            cout<<"Ahora tendras 3 opciones de ruta a traves del rio..."<<endl;
+            cout<<"Debes seleccionar una y llegar en menos de 24 horas al destino"<<endl;
+            cout<<"De lo contrario quedaras eliminado"<<endl;
+
+            cout<<"1. Ruta a traves del pantano"<<endl;
+            cout<<"2. Ruta en los rapidos"<<endl;
+            cout<<"3. Ruta a traves de la selva"<<endl;
+
+            cin<<opcion;
+
+            switch()
+            {
+            case 1:
+
+                break;
+            case 2:
+
+                break;
+            case 3:
+
+                break;
+            }
+
+
         }
         else
         {
