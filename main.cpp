@@ -113,26 +113,50 @@ int main()
                 cout << "1. Tronco de arboles" << endl << "2. Hojas de palmera" << endl << "3. Caña" << endl;
                 int respuesta;
                 cin >> respuesta;
-                
-                switch (respuesta)
-                {
-                case 1:
-                    
-                    break;
+                if (balsa <= 100){
+                    switch (respuesta)
+                    {
+                    case 1:
+                        
+                        break;
+    
+                    case 2:
+                        
+                        break;
+    
+                    case 3:
+                        
+                        break;
+    
+                    default:
+                        break;
+                    }
+                } else {
+                    cout << "Usted ha terminado de armar la balsa antes de los 6 dias, usted ahora puede recolectar mas alimentos" << endl;
 
-                case 2:
-                    
-                    break;
+                    int opcion;
+                    cin >> opcion;
 
-                case 3:
-                    
-                    break;
+                    switch (opcion)
+                    {
+                    case 1:
+                        
+                        break;
 
-                default:
-                    break;
+                    case 2:
+
+                        break;
+
+                    case 3:
+                    
+                        break;
+
+                    default:
+                        break;
+                    }
                 }
-
-
+                
+                cout << "Ha terminado la etapa 2" << endl;
             }
             
         }
