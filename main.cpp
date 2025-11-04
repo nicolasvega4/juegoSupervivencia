@@ -167,3 +167,5 @@ int main()
     } while (condicion == 1);
     return 0;
 }
+
+// TO DO: Hacer un menu donde se muestre al finalizar cada etapa se de la opcion de continuar la etapa o salir del juego
