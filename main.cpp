@@ -158,9 +158,9 @@ int main()
 
                 cout << "Ha terminado la etapa 2" << endl;
             }
-            cout<<"---------------------------"endl;
+            cout<<"---------------------------" << endl;
             cout<<"Inicio de la etapa 3"<<endl;
-            cout<<"---------------------------"endl;
+            cout<<"---------------------------" << endl;
 
             cout<<"Ahora tendras 3 opciones de ruta a traves del rio..."<<endl;
             cout<<"Debes seleccionar una y llegar en menos de 24 horas al destino"<<endl;
@@ -170,9 +170,9 @@ int main()
             cout<<"2. Ruta en los rapidos"<<endl;
             cout<<"3. Ruta a traves de la selva"<<endl;
 
-            cin<<opcion;
+            cin >> opcion;
 
-            switch()
+            switch(opcion)
             {
             case 1:
 
