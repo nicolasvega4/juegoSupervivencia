@@ -3,9 +3,6 @@
 #include <iostream>
 #include <time.h>
 
-int random(int maximo, int minimo){
-    int num = rand() % (maximo - minimo + 1);
-    return num;
-}
+int random_int(int max, int min);
 
 #endif // FUNCIONES_H_INCLUDED

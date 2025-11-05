@@ -16,13 +16,14 @@ int main()
         cout << "1 - Iniciar juego" << endl;
         cout << "2 - Salir del juego" << endl;
         cin >> opcion;
-
+        int refugio = 0;
+        int obt_refugio = 0;
+        
         if (opcion == 1)
         {
             // Inicio de la primera etapa
             cout << "Etapa 1, armar un refugio" << endl;
             for (int i = 1; i <= 7; i++){
-                int refugio = 0;
 
                 cout << "Esta en el dia: " << i << endl;
                 if (i == 7)
@@ -40,14 +41,17 @@ int main()
                     cout << "1 - Pesca en el rio";
                     cout << "2 - Cosecha en la zona de arboustos" << endl;
                     cout << "3 - Cosecha en la zona de arbustos" << endl;
+                    cout << "4 - Para cambiar de opcion" << endl;
                     cin >> opcion;
-
-                    // TO DO: Agregar las funciones random para las opciones del switch y poder optener los porcentajes de los materiales recolectados
 
                     switch (opcion)
                     {
                     case 1:
-                        cout << "Usted recogio:" << endl;
+                        obt_refugio = random_int(40, 20);
+                        cout << "Usted recogio:" << obt_refugio << endl;
+                        refugio += obt_refugio;
+
+                        //Nota: sin probar, el compilador de visual studio code me da error por alguna razon que desconosco
                         break;
                     case 2:
                         cout << "Usted recogio:" << endl;
@@ -56,6 +60,7 @@ int main()
                         cout << "Usted recogio:" << endl;
                         break;
                     default:
+                        i--;
                         break;
                     }
 
@@ -67,6 +72,7 @@ int main()
                     cout << "2 - Ramas de arbustos" << endl;
                     cout << "3 - Barro" << endl;
                     cout << "4 - Rocas" << endl;
+                    cout << "5 - Cambiar de opcion" << endl;
                     int opcion;
                     cin >> opcion;
 
@@ -86,6 +92,7 @@ int main()
                         break;
 
                     default:
+                        i--;
                         break;
                     }
 
@@ -194,5 +201,3 @@ int main()
     } while (condicion == 1);
     return 0;
 }
-
-// TO DO: Hacer un menu donde se muestre al finalizar cada etapa se de la opcion de continuar la etapa o salir del juego
