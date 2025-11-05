@@ -51,7 +51,7 @@ int main()
                         cout << "Usted recogio:" << obt_refugio << endl;
                         refugio += obt_refugio;
 
-                        //Nota: sin probar, el compilador de visual studio code me da error por alguna razon que desconosco
+                        //Nota: sin probar, el compilador de visual studio code me da error al importar la funcion de funciones.cpp y funciones.h y no se como arreglarlo
                         break;
                     case 2:
                         cout << "Usted recogio:" << endl;
