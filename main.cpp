@@ -49,9 +49,7 @@ int main()
                     case 1:
                         obt_refugio = random_int(20, 40);
                         refugio += obt_refugio;
-                        cout << "Usted recogio: " << obt_refugio << "%" << endl;
-
-                        //Nota: sin probar, el compilador de visual studio code me da error al importar la funcion de funciones.cpp y funciones.h y no se como arreglarlo
+                        cout << "Usted recogio: " << obt_refugio << "%" << " Ahora tiene: " << refugio << "%" << " armado" << endl;
 
                         break;
                     case 2:
