@@ -17,13 +17,16 @@ int main()
         cout << "2 - Salir del juego" << endl;
         cin >> opcion;
         int refugio = 0;
+        int comida = 0;
+        int obt_comida = 0;
         int obt_refugio = 0;
-        
+
         if (opcion == 1)
         {
             // Inicio de la primera etapa
             cout << "Etapa 1, armar un refugio" << endl;
-            for (int i = 1; i <= 7; i++){
+            for (int i = 1; i <= 7; i++)
+            {
 
                 cout << "Esta en el dia: " << i << endl;
                 if (i == 7)
@@ -31,7 +34,10 @@ int main()
                     cout << ultimoDia << endl;
                 }
 
-                cout << "Elija una opcion: 1 - para comida 2 - para recursos" << endl;
+                cout << "Elija una opcion:" << endl
+                     << "1 - para comida" << endl
+                     << "2 - para recursos" << endl;
+
                 int respuesta;
                 cin >> respuesta;
                 switch (respuesta)
@@ -47,17 +53,33 @@ int main()
                     switch (opcion)
                     {
                     case 1:
-                        obt_refugio = random_int(20, 40);
-                        refugio += obt_refugio;
-                        cout << "Usted recogio: " << obt_refugio << "%" << " Ahora tiene: " << refugio << "%" << " armado" << endl;
+
+                        obt_comida = random_int(500, 1000);
+                        float convertir = convertir_kg(obt_comida);
+                        convertir += comida;
+                        
+                        cout << "Usted recogio:" << convertir << "kg" << " Ahora tiene:" << comida << " kg" << endl;
 
                         break;
                     case 2:
-                        cout << "Usted recogio:" << endl;
+                        
+                        obt_comida = random_int(500, 1000);
+                        float convertir = convertir_kg(obt_comida);
+                        convertir += comida;
+                        
+                        cout << "Usted recogio:" << convertir << "kg" << " Ahora tiene:" << comida << " kg" << endl;
+
                         break;
                     case 3:
-                        cout << "Usted recogio:" << endl;
+                        
+                        obt_comida = random_int(500, 1000);
+                        float convertir = convertir_kg(obt_comida);
+                        convertir += comida;
+                        
+                        cout << "Usted recogio:" << convertir << "kg" << " Ahora tiene:" << comida << " kg" << endl;
+
                         break;
+
                     default:
                         i--;
                         break;
@@ -66,6 +88,13 @@ int main()
                     break;
 
                 case 2:
+
+                if ((refugio >= 100) && (respuesta == 2)){
+                    refugio = 100;
+                    cout << "Usted ya ha alcanzado el maximo de recursos porfavor escoja otra opcion." << endl;
+                    i--;
+                } else {
+                    
                     cout << "Eligio recursos, elija una opcion:" << endl;
                     cout << "1 - Rama de arboles" << endl;
                     cout << "2 - Ramas de arbustos" << endl;
@@ -74,27 +103,35 @@ int main()
                     cout << "5 - Cambiar de opcion" << endl;
                     int opcion;
                     cin >> opcion;
-
+    
                     switch (opcion)
                     {
                     case 1:
-                        cout << "Usted recogio:" << endl;
+                        obt_refugio = random_int(20, 30);
+                        obt_refugio += refugio;
+                        cout << "Usted recogio:" << obt_refugio << "%" << " Ahora tiene: " << refugio << "%" << endl;
                         break;
                     case 2:
-                        cout << "Usted recogio:" << endl;
+                        obt_refugio = random_int(20, 30);
+                        obt_refugio += refugio;
+                        cout << "Usted recogio:" << obt_refugio << "%" << " Ahora tiene: " << refugio << "%" << endl;
                         break;
                     case 3:
-                        cout << "Usted recogio:" << endl;
+                        obt_refugio = random_int(20, 30);
+                        obt_refugio += refugio;
+                        cout << "Usted recogio:" << obt_refugio << "%" << " Ahora tiene: " << refugio << "%" << endl;
                         break;
                     case 4:
-                        cout << "Usted recogio:" << endl;
+                        obt_refugio = random_int(20, 30);
+                        obt_refugio += refugio;
+                        cout << "Usted recogio:" << obt_refugio << "%" << " Ahora tiene: " << refugio << "%" << endl;
                         break;
-
+    
                     default:
                         i--;
                         break;
                     }
-
+                }
                     break;
 
                 default:
@@ -102,11 +139,13 @@ int main()
                 }
             }
 
-            cout << "Fin de la etapa 1" << endl << "Comienzo de la segunda etapa: Construir una balsa" << endl;
+            cout << "Fin de la etapa 1" << endl
+                 << "Comienzo de la segunda etapa: Construir una balsa" << endl;
             cout << "Tiene 6 dias para construir la balsa" << endl;
 
             // Inicio de la segunda etapa
-            for (int i = 1; i < 7; i++){
+            for (int i = 1; i < 7; i++)
+            {
 
                 int balsa = 0;
 
@@ -116,10 +155,13 @@ int main()
                     cout << ultimoDia << endl;
                 }
                 cout << "Elija una opcion" << endl;
-                cout << "1. Tronco de arboles" << endl << "2. Hojas de palmera" << endl << "3. Caña" << endl;
+                cout << "1. Tronco de arboles" << endl
+                     << "2. Hojas de palmera" << endl
+                     << "3. Caña" << endl;
                 int respuesta;
                 cin >> respuesta;
-                if (balsa <= 100){
+                if (balsa <= 100)
+                {
                     switch (respuesta)
                     {
                     case 1:
@@ -137,7 +179,9 @@ int main()
                     default:
                         break;
                     }
-                } else {
+                }
+                else
+                {
                     cout << "Usted ha terminado de armar la balsa antes de los 6 dias, usted ahora puede recolectar mas alimentos" << endl;
 
                     int opcion;
@@ -164,21 +208,21 @@ int main()
 
                 cout << "Ha terminado la etapa 2" << endl;
             }
-            cout<<"---------------------------" << endl;
-            cout<<"Inicio de la etapa 3"<<endl;
-            cout<<"---------------------------" << endl;
+            cout << "---------------------------" << endl;
+            cout << "Inicio de la etapa 3" << endl;
+            cout << "---------------------------" << endl;
 
-            cout<<"Ahora tendras 3 opciones de ruta a traves del rio..."<<endl;
-            cout<<"Debes seleccionar una y llegar en menos de 24 horas al destino"<<endl;
-            cout<<"De lo contrario quedaras eliminado"<<endl;
+            cout << "Ahora tendras 3 opciones de ruta a traves del rio..." << endl;
+            cout << "Debes seleccionar una y llegar en menos de 24 horas al destino" << endl;
+            cout << "De lo contrario quedaras eliminado" << endl;
 
-            cout<<"1. Ruta a traves del pantano"<<endl;
-            cout<<"2. Ruta en los rapidos"<<endl;
-            cout<<"3. Ruta a traves de la selva"<<endl;
+            cout << "1. Ruta a traves del pantano" << endl;
+            cout << "2. Ruta en los rapidos" << endl;
+            cout << "3. Ruta a traves de la selva" << endl;
 
             cin >> opcion;
 
-            switch(opcion)
+            switch (opcion)
             {
             case 1:
 
@@ -190,8 +234,6 @@ int main()
 
                 break;
             }
-
-
         }
         else
         {
