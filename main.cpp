@@ -31,14 +31,14 @@ int main()
                     cout << ultimoDia << endl;
                 }
 
-                cout << "Elija una opcion 1 - para comida 2 - para recursos" << endl;
+                cout << "Elija una opcion: 1 - para comida 2 - para recursos" << endl;
                 int respuesta;
                 cin >> respuesta;
                 switch (respuesta)
                 {
                 case 1:
                     cout << "Eligio comida, elija una opcion:" << endl;
-                    cout << "1 - Pesca en el rio";
+                    cout << "1 - Pesca en el rio" << endl;
                     cout << "2 - Cosecha en la zona de arboustos" << endl;
                     cout << "3 - Cosecha en la zona de arbustos" << endl;
                     cout << "4 - Para cambiar de opcion" << endl;
@@ -47,11 +47,12 @@ int main()
                     switch (opcion)
                     {
                     case 1:
-                        obt_refugio = random_int(40, 20);
-                        cout << "Usted recogio:" << obt_refugio << endl;
+                        obt_refugio = random_int(20, 40);
                         refugio += obt_refugio;
+                        cout << "Usted recogio: " << obt_refugio << "%" << endl;
 
                         //Nota: sin probar, el compilador de visual studio code me da error al importar la funcion de funciones.cpp y funciones.h y no se como arreglarlo
+
                         break;
                     case 2:
                         cout << "Usted recogio:" << endl;

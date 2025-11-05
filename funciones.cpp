@@ -2,7 +2,7 @@
 #include <iostream>
 #include <time.h>
 
-int random_int(int maximo, int minimo){
-    int num = rand() % (maximo - minimo + 1);
+int random_int(int minimo, int maximo){
+    int num = rand() % (minimo - maximo + 1) + minimo;
     return num;
 }
