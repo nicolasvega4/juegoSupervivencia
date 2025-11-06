@@ -18,6 +18,7 @@ int main()
         cin >> opcion;
         int refugio = 0;
         int comida = 0;
+        float convertir = 0.0;
         int obt_comida = 0;
         int obt_refugio = 0;
 
@@ -55,7 +56,7 @@ int main()
                     case 1:
 
                         obt_comida = random_int(500, 1000);
-                        float convertir = convertir_kg(obt_comida);
+                        convertir = convertir_kg(obt_comida);
                         convertir += comida;
                         
                         cout << "Usted recogio:" << convertir << "kg" << " Ahora tiene:" << comida << " kg" << endl;
@@ -64,7 +65,7 @@ int main()
                     case 2:
                         
                         obt_comida = random_int(500, 1000);
-                        float convertir = convertir_kg(obt_comida);
+                        convertir = convertir_kg(obt_comida);
                         convertir += comida;
                         
                         cout << "Usted recogio:" << convertir << "kg" << " Ahora tiene:" << comida << " kg" << endl;
@@ -73,7 +74,7 @@ int main()
                     case 3:
                         
                         obt_comida = random_int(500, 1000);
-                        float convertir = convertir_kg(obt_comida);
+                        convertir = convertir_kg(obt_comida);
                         convertir += comida;
                         
                         cout << "Usted recogio:" << convertir << "kg" << " Ahora tiene:" << comida << " kg" << endl;
@@ -110,6 +111,7 @@ int main()
                         obt_refugio = random_int(20, 30);
                         obt_refugio += refugio;
                         cout << "Usted recogio:" << obt_refugio << "%" << " Ahora tiene: " << refugio << "%" << endl;
+
                         break;
                     case 2:
                         obt_refugio = random_int(20, 30);
