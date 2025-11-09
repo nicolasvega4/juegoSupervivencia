@@ -8,9 +8,8 @@ int random_int(int minimo, int maximo){
     return num;
 }
 
-float convertir_kg (int num){
-    float resultado = num / 1000;
-    return resultado;
+bool msg_ruleta(int numero) {
+    if (numero == 2) return true;
 }
 
 int msg_obt(int obt, int flag, int (*f)(int, int), int maximo, int minimo) {
