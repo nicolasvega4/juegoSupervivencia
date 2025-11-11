@@ -20,10 +20,8 @@ int main()
         if (opcion == 1)
         {
             int refugio = 0;
-            int obt_comida = 0;
-            int obt_refugio = 0;
-            int ruleta = 0;
             int comida = 0;
+            int balsa = 0;
             bool ruleta_chance = false;
             // Inicio de la primera etapa
             cout << "Etapa 1, armar un refugio" << endl;
@@ -93,12 +91,13 @@ int main()
                         switch (opcion)
                         {
                         case 1:
-                            obtenerRecursos(refugio);
+                            ruleta_chance = obtenerRecursos(refugio);
 
                             if (ruleta_chance == true)
                             {
+                                cout << "Felicidades en su trayecto a recoger recursos usted encontro comida ahora tiene " << endl;
                                 obtenerComida(comida);
-                            } 
+                            }
 
                             break;
                         case 2:
@@ -106,8 +105,9 @@ int main()
 
                             if (ruleta_chance == true)
                             {
+                                cout << "Felicidades en su trayecto a recoger recursos usted encontro comida ahora tiene " << endl;
                                 obtenerComida(comida);
-                            } 
+                            }
 
                             break;
                         case 3:
@@ -115,8 +115,9 @@ int main()
 
                             if (ruleta_chance == true)
                             {
+                                cout << "Felicidades en su trayecto a recoger recursos usted encontro comida ahora tiene " << endl;
                                 obtenerComida(comida);
-                            } 
+                            }
 
                             break;
                         case 4:
@@ -124,8 +125,9 @@ int main()
 
                             if (ruleta_chance == true)
                             {
+                                cout << "Felicidades en su trayecto a recoger recursos usted encontro comida ahora tiene " << endl;
                                 obtenerComida(comida);
-                            } 
+                            }
 
                             break;
 
@@ -154,9 +156,6 @@ int main()
                 // Inicio de la segunda etapa
                 for (int i = 1; i < 7; i++)
                 {
-
-                    int balsa = 0;
-
                     cout << "Usted esta en el dia" << i << endl;
                     if (i == 6)
                     {

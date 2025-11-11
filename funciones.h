@@ -5,7 +5,7 @@
 
 int random_int(int max, int min);
 void obtenerComida(int &comida);
-void obtenerRecursos(int &recursos);
+bool obtenerRecursos(int &recursos);
 bool msg_ruleta(int numero);
 
 

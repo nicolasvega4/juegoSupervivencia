@@ -15,11 +15,6 @@ bool msg_ruleta(int numero)
     if (numero == 2)
     {
         flag = true;
-        cout << "Cierto" << endl;
-    }
-    else
-    {
-        cout << "Falso" << endl;
     }
     return flag;
 }
@@ -31,11 +26,12 @@ void obtenerComida(int &comida)
     cout << "Usted recogio:" << obt_comida << "kg" << " Ahora tiene:" << comida << " kg" << endl;
 }
 
-void obtenerRecursos(int &recursos)
+bool obtenerRecursos(int &recursos)
 {
     int ruleta = random_int(1, 3);
     int obt_refugio = random_int(20, 30);
     int ruleta_chance = msg_ruleta(ruleta);
     recursos += obt_refugio;
     cout << "Usted recogio: " << obt_refugio << "%" << " Ahora tiene: " << recursos << "%" << endl;
+    return ruleta_chance;
 }
