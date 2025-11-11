@@ -3,25 +3,39 @@
 using namespace std;
 #include <time.h>
 
-int random_int(int minimo, int maximo){
+int random_int(int minimo, int maximo)
+{
     int num = rand() % (maximo - minimo + 1) + minimo;
     return num;
 }
 
-bool msg_ruleta(int numero) {
+bool msg_ruleta(int numero)
+{
     bool flag = false;
-    if (numero == 2){
+    if (numero == 2)
+    {
         flag = true;
         cout << "Cierto" << endl;
-    } else {
+    }
+    else
+    {
         cout << "Falso" << endl;
     }
     return flag;
 }
 
-int msg_obt(int obt, int flag, int (*f)(int, int), int maximo, int minimo) {
-    obt = f(minimo, maximo);
-    obt += flag;    
-    cout << "Usted recogio: " << obt << "%" << " Ahora tiene: " << flag << "%" << " armado" << endl;
-    return flag;
+void obtenerComida(int &comida)
+{
+    int obt_comida = random_int(2, 5);
+    comida += obt_comida;
+    cout << "Usted recogio:" << obt_comida << "kg" << " Ahora tiene:" << comida << " kg" << endl;
+}
+
+void obtenerRecursos(int &recursos)
+{
+    int ruleta = random_int(1, 3);
+    int obt_refugio = random_int(20, 30);
+    int ruleta_chance = msg_ruleta(ruleta);
+    recursos += obt_refugio;
+    cout << "Usted recogio: " << obt_refugio << "%" << " Ahora tiene: " << recursos << "%" << endl;
 }
