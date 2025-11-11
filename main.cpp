@@ -16,15 +16,15 @@ int main()
         cout << "1 - Iniciar juego" << endl;
         cout << "2 - Salir del juego" << endl;
         cin >> opcion;
-        int refugio = 0;
-        int comida = 0;
-        float convertir = 0.0;
-        int obt_comida = 0;
-        int obt_refugio = 0;
-        int ruleta = 0;
 
         if (opcion == 1)
         {
+            int refugio = 0;
+            int obt_comida = 0;
+            int obt_refugio = 0;
+            int ruleta = 0;
+            int comida = 0;
+            bool ruleta_chance = false;
             // Inicio de la primera etapa
             cout << "Etapa 1, armar un refugio" << endl;
             for (int i = 1; i <= 7; i++)
@@ -57,24 +57,22 @@ int main()
                     case 1:
 
                         obt_comida = random_int(2, 5);
-                        obt_comida += comida;
-                        cout << "Usted recogio:" << convertir << "kg" << " Ahora tiene:" << comida << " kg" << endl;
+                        comida += obt_comida;
+                        cout << "Usted recogio:" << obt_comida << "kg" << " Ahora tiene:" << comida << " kg" << endl;
 
                         break;
                     case 2:
 
                         obt_comida = random_int(2, 5);
-                        obt_comida += comida;
-
-                        cout << "Usted recogio:" << convertir << "kg" << " Ahora tiene:" << comida << " kg" << endl;
+                        comida += obt_comida;
+                        cout << "Usted recogio:" << obt_comida << "kg" << " Ahora tiene:" << comida << " kg" << endl;
 
                         break;
                     case 3:
 
                         obt_comida = random_int(2, 5);
-                        obt_comida += comida;
-
-                        cout << "Usted recogio:" << convertir << "kg" << " Ahora tiene:" << comida << " kg" << endl;
+                        comida += obt_comida;
+                        cout << "Usted recogio:" << obt_comida << "kg" << " Ahora tiene:" << comida << " kg" << endl;
 
                         break;
 
@@ -95,7 +93,6 @@ int main()
                     }
                     else
                     {
-
                         cout << "Eligio recursos, elija una opcion:" << endl;
                         cout << "1 - Rama de arboles" << endl;
                         cout << "2 - Ramas de arbustos" << endl;
@@ -108,71 +105,80 @@ int main()
                         switch (opcion)
                         {
                         case 1:
-                            ruleta = random_int(2, 3);
+                            ruleta = random_int(1, 3);
                             obt_refugio = random_int(20, 30);
-                            obt_refugio += refugio;
-                            cout << "Usted recogio:" << obt_refugio << "%" << " Ahora tiene: " << refugio << "%" << endl;
-                            
-                            if (msg_ruleta(ruleta) == true) {
+                            ruleta_chance = msg_ruleta(ruleta);
+                            refugio += obt_refugio;
+                            cout << "Usted recogio: " << obt_refugio << "%" << " Ahora tiene: " << refugio << "%" << endl;
+
+                            if (ruleta_chance == true)
+                            {
                                 obt_comida = random_int(2, 5);
-                                obt_comida += comida;
+                                comida += obt_comida;
                                 cout << "Felicidades en tu trayecto en conseguir recursos encontraste algo de comida! Ahora tienes: " << comida << "kg" << endl;
-                            }
+                            } 
 
                             break;
                         case 2:
-                            ruleta = random_int(2, 3); 
+                            ruleta = random_int(1, 3);
                             obt_refugio = random_int(20, 30);
-                            obt_refugio += refugio;
-                            cout << "Usted recogio:" << obt_refugio << "%" << " Ahora tiene: " << refugio << "%" << endl;
+                            ruleta_chance = msg_ruleta(ruleta);
+                            refugio += obt_refugio;
+                            cout << "Usted recogio: " << obt_refugio << "%" << " Ahora tiene: " << refugio << "%" << endl;
 
-                            if (msg_ruleta(ruleta) == true) {
+                            if (ruleta_chance == true)
+                            {
                                 obt_comida = random_int(2, 5);
-                                obt_comida += comida;
+                                comida += obt_comida;
                                 cout << "Felicidades en tu trayecto en conseguir recursos encontraste algo de comida! Ahora tienes: " << comida << "kg" << endl;
-                            }
+                            } 
 
                             break;
                         case 3:
-                            ruleta = random_int(2, 3);
+                            ruleta = random_int(1, 3);
                             obt_refugio = random_int(20, 30);
-                            obt_refugio += refugio;
-                            cout << "Usted recogio:" << obt_refugio << "%" << " Ahora tiene: " << refugio << "%" << endl;
+                            ruleta_chance = msg_ruleta(ruleta);
+                            refugio += obt_refugio;
+                            cout << "Usted recogio: " << obt_refugio << "%" << " Ahora tiene: " << refugio << "%" << endl;
 
-                            if (msg_ruleta(ruleta) == true) {
+                            if (ruleta_chance == true)
+                            {
                                 obt_comida = random_int(2, 5);
-                                obt_comida += comida;
+                                comida += obt_comida;
                                 cout << "Felicidades en tu trayecto en conseguir recursos encontraste algo de comida! Ahora tienes: " << comida << "kg" << endl;
-                            }
+                            } 
 
                             break;
                         case 4:
                             ruleta = random_int(1, 3);
                             obt_refugio = random_int(20, 30);
-                            obt_refugio += refugio;
-                            cout << "Usted recogio:" << obt_refugio << "%" << " Ahora tiene: " << refugio << "%" << endl;
+                            ruleta_chance = msg_ruleta(ruleta);
+                            refugio += obt_refugio;
+                            cout << "Usted recogio: " << obt_refugio << "%" << " Ahora tiene: " << refugio << "%" << endl;
 
-                            if (msg_ruleta(ruleta) == true) {
+                            if (ruleta_chance == true)
+                            {
                                 obt_comida = random_int(2, 5);
-                                obt_comida += comida;
+                                comida += obt_comida;
                                 cout << "Felicidades en tu trayecto en conseguir recursos encontraste algo de comida! Ahora tienes: " << comida << "kg" << endl;
-                            }
-                            
+                            } 
+
                             break;
 
                         default:
                             i--;
                             break;
                         }
-                    }
-                    break;
+                        break;
 
-                default:
-                    break;
+                    default:
+                        break;
+                    }
                 }
             }
 
-            if (comida < 14){
+            if (comida < 14)
+            {
                 cout << "Lo sentimos usted no pudo recoger lo minimo de comida para la segunda etapa por ende queda descalificado." << endl;
             }
             else

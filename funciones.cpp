@@ -4,12 +4,19 @@ using namespace std;
 #include <time.h>
 
 int random_int(int minimo, int maximo){
-    int num = rand() % (minimo - maximo + 1) + minimo;
+    int num = rand() % (maximo - minimo + 1) + minimo;
     return num;
 }
 
 bool msg_ruleta(int numero) {
-    if (numero == 2) return true;
+    bool flag = false;
+    if (numero == 2){
+        flag = true;
+        cout << "Cierto" << endl;
+    } else {
+        cout << "Falso" << endl;
+    }
+    return flag;
 }
 
 int msg_obt(int obt, int flag, int (*f)(int, int), int maximo, int minimo) {
