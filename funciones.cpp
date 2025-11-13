@@ -23,7 +23,12 @@ void obtenerComida(int &comida)
 {
     int obt_comida = random_int(2, 5);
     comida += obt_comida;
+    cout << "-------------------------------" << endl;
     cout << "Usted recogio:" << obt_comida << "kg" << " Ahora tiene:" << comida << " kg" << endl;
+    cout << "-------------------------------" << endl;
+
+    system("pause");
+    system("cls");
 }
 
 bool obtenerRecursos(int &recursos)
@@ -34,4 +39,7 @@ bool obtenerRecursos(int &recursos)
     recursos += obt_refugio;
     cout << "Usted recogio: " << obt_refugio << "%" << " Ahora tiene: " << recursos << "%" << endl;
     return ruleta_chance;
+
+    system("pause");
+    system("cls");
 }

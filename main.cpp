@@ -12,10 +12,25 @@ int main()
     do
     {
         int opcion;
-        cout << "Eliga una opcion: " << endl;
+        cout << "----------------------------------------------------------" << endl;
+        cout << "Bienvenido al juego de supervivencia en la selva amazonas" << endl;
+        cout << "----------------------------------------------------------" << endl;
+        cout << endl;
+        cout << "En este juego debera sobrevivir a 3 etapas distintas" << endl;
+        cout << endl;
+        cout << "Primero debera armar un refugio y recolectar alimentos " << endl;
+        cout << "La condicion para avanzar a la siguiente etapa es que consiga el 100% del refugio y recolecte 14 kilos de comida" << endl;
+        cout << endl;
+
+
+        cout << "Desea jugar al juego? " << endl;
+        cout << endl;
         cout << "1 - Iniciar juego" << endl;
         cout << "2 - Salir del juego" << endl;
         cin >> opcion;
+
+        system("pause");
+        system("cls");
 
         if (opcion == 1)
         {
@@ -23,27 +38,39 @@ int main()
             int comida = 0;
             int balsa = 0;
             bool ruleta_chance = false;
-            // Inicio de la primera etapa
+
+            /// Inicio de la primera etapa
+
             cout << "Etapa 1, armar un refugio" << endl;
             for (int i = 1; i <= 7; i++)
             {
 
+                cout << "---------------------"<<endl;
                 cout << "Esta en el dia: " << i << endl;
+                cout << "---------------------"<<endl;
                 if (i == 7)
                 {
                     cout << ultimoDia << endl;
                 }
 
-                cout << "Elija una opcion:" << endl
-                     << "1 - para comida" << endl
-                     << "2 - para recursos" << endl;
+                cout << "Elija una opcion:" << endl;
+                cout << endl;
+                cout << "1 - para comida" << endl;
+                cout << "2 - para recursos" << endl;
 
                 int respuesta;
                 cin >> respuesta;
+
+                system("pause");
+                system("cls");
+
                 switch (respuesta)
                 {
                 case 1:
+                    cout << "------------------------------------" << endl;
                     cout << "Eligio comida, elija una opcion:" << endl;
+                    cout << "------------------------------------" << endl;
+                    cout << endl;
                     cout << "1 - Pesca en el rio" << endl;
                     cout << "2 - Cosecha en la zona de arboustos" << endl;
                     cout << "3 - Cosecha en la zona de arbustos" << endl;
@@ -69,6 +96,9 @@ int main()
 
                     break;
 
+                    system("pause");
+                    system("cls");
+
                 case 2:
 
                     if ((refugio >= 100) && (respuesta == 2))
@@ -79,7 +109,10 @@ int main()
                     }
                     else
                     {
+                        cout << "------------------------------------" << endl;
                         cout << "Eligio recursos, elija una opcion:" << endl;
+                        cout << "------------------------------------" << endl;
+                        cout << endl;
                         cout << "1 - Rama de arboles" << endl;
                         cout << "2 - Ramas de arbustos" << endl;
                         cout << "3 - Barro" << endl;
@@ -140,20 +173,32 @@ int main()
                     default:
                         break;
                     }
+
+                    system("pause");
+                    system("cls");
+
                 }
             }
 
+            system("pause");
+            system("cls");
+
             if (comida < 14)
             {
+                cout << "---------------------------------------------------------------------" << endl;
                 cout << "Lo sentimos usted no pudo recoger lo minimo de comida para la segunda etapa por ende queda descalificado." << endl;
+                cout << "---------------------------------------------------------------------" << endl;
             }
             else
             {
-                cout << "Fin de la etapa 1" << endl
-                     << "Comienzo de la segunda etapa: Construir una balsa" << endl;
+                cout << "---------------------" << endl;
+                cout << "Fin de la etapa 1" << endl;
+                cout << "---------------------" << endl;
+
+                cout << "Comienzo de la segunda etapa: Construir una balsa" << endl;
                 cout << "Tiene 6 dias para construir la balsa" << endl;
 
-                // Inicio de la segunda etapa
+                /// Inicio de la segunda etapa
                 for (int i = 1; i < 7; i++)
                 {
                     cout << "Usted esta en el dia" << i << endl;
@@ -247,6 +292,7 @@ int main()
         {
             condicion = 2;
         }
-    } while (condicion == 1);
+    }
+    while (condicion == 1);
     return 0;
 }
