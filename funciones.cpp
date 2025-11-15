@@ -24,11 +24,8 @@ void obtenerComida(int &comida)
     int obt_comida = random_int(2, 5);
     comida += obt_comida;
     cout << "-------------------------------" << endl;
-    cout << "Usted recogio:" << obt_comida << "kg" << " Ahora tiene:" << comida << " kg" << endl;
+    cout << "Usted recogio " << obt_comida << "kg" << " Ahora tiene:" << comida << " kg" << endl;
     cout << "-------------------------------" << endl;
-
-    system("pause");
-    system("cls");
 }
 
 bool obtenerRecursos(int &recursos)
@@ -37,10 +34,9 @@ bool obtenerRecursos(int &recursos)
     int obt_refugio = random_int(20, 30);
     int ruleta_chance = msg_ruleta(ruleta);
     recursos += obt_refugio;
+    cout << "--------------------------------------------------------" << endl;
     cout << "Usted consiguio: " << obt_refugio << " materiales en su busqueda" << endl;
     cout << "Ahora tiene completo el " << recursos << "% del refugio" << endl;
+    cout << "--------------------------------------------------------" << endl;
     return ruleta_chance;
-
-    system("pause");
-    system("cls");
 }

@@ -73,7 +73,7 @@ int main()
 
                 switch (respuesta)
                 {
-                /// Seleciona comida
+                /// SELECCIONA COMIDA
                 case 1:
                     cout << "-----------------------------------" << endl;
                     cout << "Eligio comida, ahora elija donde:" << endl;
@@ -89,12 +89,24 @@ int main()
                     {
                     case 1:
                         obtenerComida(comida);
+
+                        system("pause");
+                        system("cls");
+
                         break;
                     case 2:
                         obtenerComida(comida);
+
+                        system("pause");
+                        system("cls");
+
                         break;
                     case 3:
                         obtenerComida(comida);
+
+                        system("pause");
+                        system("cls");
+
                         break;
 
                     default:
@@ -104,10 +116,8 @@ int main()
 
                     break;
 
-                    system("pause");
-                    system("cls");
+                /// SELECCIONA RECURSOS
 
-                    /// Seleciona recursos
                 case 2:
 
                     if ((refugio >= 100) && (respuesta == 2))
@@ -133,6 +143,7 @@ int main()
                         switch (opcion)
                         {
                         case 1:
+
                             ruleta_chance = obtenerRecursos(refugio);
 
                             if (ruleta_chance == true)
@@ -140,6 +151,9 @@ int main()
                                 cout << "Felicidades en su trayecto a recoger recursos usted encontro comida ahora tiene " << endl;
                                 obtenerComida(comida);
                             }
+
+                            system("pause");
+                            system("cls");
 
                             break;
                         case 2:
@@ -151,6 +165,9 @@ int main()
                                 obtenerRecursos(comida);
                             }
 
+                            system("pause");
+                            system("cls");
+
                             break;
                         case 3:
                             obtenerRecursos(refugio);
@@ -161,6 +178,9 @@ int main()
                                 obtenerComida(comida);
                             }
 
+                            system("pause");
+                            system("cls");
+
                             break;
                         case 4:
                             obtenerRecursos(refugio);
@@ -170,6 +190,9 @@ int main()
                                 cout << "Felicidades en su trayecto a recoger recursos usted encontro comida ahora tiene " << endl;
                                 obtenerComida(comida);
                             }
+
+                            system("pause");
+                            system("cls");
 
                             break;
 
@@ -182,10 +205,6 @@ int main()
                     default:
                         break;
                     }
-
-                    system("pause");
-                    system("cls");
-
                 }
             }
 
