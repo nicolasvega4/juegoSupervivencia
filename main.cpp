@@ -5,6 +5,13 @@ using namespace std;
 
 int main()
 {
+
+    /// Declaracion de variables
+    int refugio = 0;
+    int comida = 0;
+    int balsa = 0;
+    bool ruleta_chance = false;
+
     srand(time(NULL));
     int condicion = 1;
     string ultimoDia = "Usted esta en el ultimo dia";
@@ -34,12 +41,8 @@ int main()
 
         if (opcion == 1)
         {
-            int refugio = 0;
-            int comida = 0;
-            int balsa = 0;
-            bool ruleta_chance = false;
 
-            /// Inicio de la primera etapa
+            /// INICIO DE LA ETAPA NRO 1
 
             cout << "Etapa 1, armar un refugio" << endl;
             for (int i = 1; i <= 7; i++)
@@ -53,10 +56,14 @@ int main()
                     cout << ultimoDia << endl;
                 }
 
-                cout << "Elija una opcion:" << endl;
+                cout << "-------------------------------" << endl;
+                cout << "Elija sabiamente que hacer hoy:" << endl;
+                cout << "-------------------------------" << endl;
                 cout << endl;
-                cout << "1 - para comida" << endl;
-                cout << "2 - para recursos" << endl;
+                cout << "Presione 1 para comida" << endl;
+                cout << "Presione 2 para recursos" << endl;
+
+                cout << endl;
 
                 int respuesta;
                 cin >> respuesta;
@@ -66,13 +73,14 @@ int main()
 
                 switch (respuesta)
                 {
+                /// Seleciona comida
                 case 1:
-                    cout << "------------------------------------" << endl;
-                    cout << "Eligio comida, elija una opcion:" << endl;
-                    cout << "------------------------------------" << endl;
+                    cout << "-----------------------------------" << endl;
+                    cout << "Eligio comida, ahora elija donde:" << endl;
+                    cout << "-----------------------------------" << endl;
                     cout << endl;
                     cout << "1 - Pesca en el rio" << endl;
-                    cout << "2 - Cosecha en la zona de arboustos" << endl;
+                    cout << "2 - Cosecha en la zona de arboles" << endl;
                     cout << "3 - Cosecha en la zona de arbustos" << endl;
                     cout << "4 - Para cambiar de opcion" << endl;
                     cin >> opcion;
@@ -99,6 +107,7 @@ int main()
                     system("pause");
                     system("cls");
 
+                    /// Seleciona recursos
                 case 2:
 
                     if ((refugio >= 100) && (respuesta == 2))
@@ -109,9 +118,9 @@ int main()
                     }
                     else
                     {
-                        cout << "------------------------------------" << endl;
-                        cout << "Eligio recursos, elija una opcion:" << endl;
-                        cout << "------------------------------------" << endl;
+                        cout << "------------------------------------------" << endl;
+                        cout << "Eligio recursos, ahora elija donde buscar:" << endl;
+                        cout << "------------------------------------------" << endl;
                         cout << endl;
                         cout << "1 - Rama de arboles" << endl;
                         cout << "2 - Ramas de arbustos" << endl;
@@ -134,17 +143,17 @@ int main()
 
                             break;
                         case 2:
-                            obtenerComida(refugio);
+                            obtenerRecursos(refugio);
 
                             if (ruleta_chance == true)
                             {
                                 cout << "Felicidades en su trayecto a recoger recursos usted encontro comida ahora tiene " << endl;
-                                obtenerComida(comida);
+                                obtenerRecursos(comida);
                             }
 
                             break;
                         case 3:
-                            obtenerComida(refugio);
+                            obtenerRecursos(refugio);
 
                             if (ruleta_chance == true)
                             {
@@ -154,7 +163,7 @@ int main()
 
                             break;
                         case 4:
-                            obtenerComida(refugio);
+                            obtenerRecursos(refugio);
 
                             if (ruleta_chance == true)
                             {
@@ -183,11 +192,16 @@ int main()
             system("pause");
             system("cls");
 
-            if (comida < 14)
+            /// MUERTE DE JUGADOR - DESCALIFICADO
+            if (comida < 14 || refugio < 100)
             {
-                cout << "---------------------------------------------------------------------" << endl;
-                cout << "Lo sentimos usted no pudo recoger lo minimo de comida para la segunda etapa por ende queda descalificado." << endl;
-                cout << "---------------------------------------------------------------------" << endl;
+                cout << "--------------------------------" << endl;
+                cout << "Lo sentimos usted ha muerto..." << endl;
+                cout << "Causa de la muerte: Hambruna " << endl;
+                cout << "--------------------------------" << endl;
+
+                system("pause");
+                system("cls");
             }
             else
             {
@@ -198,7 +212,7 @@ int main()
                 cout << "Comienzo de la segunda etapa: Construir una balsa" << endl;
                 cout << "Tiene 6 dias para construir la balsa" << endl;
 
-                /// Inicio de la segunda etapa
+                /// INICIO DE LA ETAPA NRO 2
                 for (int i = 1; i < 7; i++)
                 {
                     cout << "Usted esta en el dia" << i << endl;
@@ -291,6 +305,7 @@ int main()
         else
         {
             condicion = 2;
+            cout << "Sos cagoooooooon" << endl;
         }
     }
     while (condicion == 1);
