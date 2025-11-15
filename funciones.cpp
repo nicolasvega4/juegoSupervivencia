@@ -35,7 +35,7 @@ bool obtenerRecursos(int &recursos)
     int ruleta_chance = msg_ruleta(ruleta);
     recursos += obt_refugio;
     cout << "--------------------------------------------------------" << endl;
-    cout << "Usted consiguio: " << obt_refugio << " materiales en su busqueda" << endl;
+    cout << "Usted consiguio " << obt_refugio << " materiales en su busqueda" << endl;
     cout << "Ahora tiene completo el " << recursos << "% del refugio" << endl;
     cout << "--------------------------------------------------------" << endl;
     return ruleta_chance;

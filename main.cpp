@@ -251,17 +251,38 @@ int main()
                         {
                         case 1:
 
+                        ruleta_chance = obtenerRecursos(balsa);
+
+
+
+                        system("pause");
+                        system("cls");
+
                             break;
 
                         case 2:
+
+                        ruleta_chance = obtenerRecursos(balsa);
+
+                        system("pause");
+                        system("csl");
 
                             break;
 
                         case 3:
 
+                            ruleta_chance = obtenerRecursos(balsa);
+
+                            system("pause");
+                            system("cls");
+
                             break;
 
                         default:
+
+                            system("pause");
+                            system("cls");
+
                             break;
                         }
                     }
