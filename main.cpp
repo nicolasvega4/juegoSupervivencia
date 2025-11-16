@@ -19,22 +19,38 @@ int main()
     do
     {
         int opcion;
-        cout << "----------------------------------------------------------" << endl;
-        cout << "Bienvenido al juego de supervivencia en la selva amazonas" << endl;
-        cout << "----------------------------------------------------------" << endl;
+        cout << "|=========================================================|" << endl;
+        cout << "|Bienvenido al juego de supervivencia en la selva amazonas|" << endl;
+        cout << "|=========================================================|" << endl;
+
+        system("pause");
+        system("cls");
+
         cout << endl;
+        cout << "------------------------------------------------------------------" << endl;
         cout << "En este juego debera sobrevivir a 3 etapas distintas" << endl;
         cout << endl;
-        cout << "Primero debera armar un refugio y recolectar alimentos " << endl;
-        cout << "La condicion para avanzar a la siguiente etapa es que consiga el 100% del refugio y recolecte 14 kilos de comida" << endl;
+        cout << "En la primer etapa debera armar un refugio y recolectar alimentos" << endl;
+        cout << endl;
+        cout << "La condiciones para avanzar a la siguiente etapa son:" <<endl;
+        cout << " *Consiguir el 100% del refugio" << endl;
+        cout << " *Recolectar 14 kilos de comida" << endl;
+        cout << "------------------------------------------------------------------" << endl;
         cout << endl;
 
+        system("pause");
+        system("cls");
 
-        cout << "Desea jugar al juego? " << endl;
+        cout << "----------------------" << endl;
+        cout << "¿Desea jugar al juego? " << endl;
         cout << endl;
         cout << "1 - Iniciar juego" << endl;
         cout << "2 - Salir del juego" << endl;
+        cout << "----------------------" << endl;
+
         cin >> opcion;
+
+        cout << "Valar Dohaeris..." << endl;
 
         system("pause");
         system("cls");
@@ -42,7 +58,7 @@ int main()
         if (opcion == 1)
         {
 
-            /// INICIO DE LA ETAPA NRO 1
+            /// INICIO DE LA ETAPA NRO 1 (REFUGIO)
 
             cout << "Etapa 1, armar un refugio" << endl;
             for (int i = 1; i <= 7; i++)
@@ -60,8 +76,8 @@ int main()
                 cout << "Elija sabiamente que hacer hoy:" << endl;
                 cout << "-------------------------------" << endl;
                 cout << endl;
-                cout << "Presione 1 para comida" << endl;
-                cout << "Presione 2 para recursos" << endl;
+                cout << "1. Para buscar para comida" << endl;
+                cout << "2. Para buscar para recursos" << endl;
 
                 cout << endl;
 
@@ -148,7 +164,11 @@ int main()
 
                             if (ruleta_chance == true)
                             {
-                                cout << "Felicidades en su trayecto a recoger recursos usted encontro comida ahora tiene " << endl;
+                                cout << endl;
+                                cout << "********************************************************************************" << endl;
+                                cout << "Felicidades en su trayecto a recoger recursos usted encontro comida ahora tiene: " << endl;
+                                cout << "********************************************************************************" << endl;
+                                cout << endl;
                                 obtenerComida(comida);
                             }
 
@@ -161,7 +181,11 @@ int main()
 
                             if (ruleta_chance == true)
                             {
-                                cout << "Felicidades en su trayecto a recoger recursos usted encontro comida ahora tiene " << endl;
+                                cout << endl;
+                                cout << "**********************************************************************************" << endl;
+                                cout << "Felicidades en su trayecto a recoger recursos usted encontro comida ahora tiene: " << endl;
+                                cout << "***********************************************************************************" << endl;
+                                cout << endl;
                                 obtenerRecursos(comida);
                             }
 
@@ -174,7 +198,11 @@ int main()
 
                             if (ruleta_chance == true)
                             {
-                                cout << "Felicidades en su trayecto a recoger recursos usted encontro comida ahora tiene " << endl;
+                                cout << endl;
+                                cout << "********************************************************************************" << endl;
+                                cout << "Felicidades en su trayecto a recoger recursos usted encontro comida ahora tiene: " << endl;
+                                cout << "********************************************************************************" << endl;
+                                cout << endl;
                                 obtenerComida(comida);
                             }
 
@@ -187,7 +215,11 @@ int main()
 
                             if (ruleta_chance == true)
                             {
-                                cout << "Felicidades en su trayecto a recoger recursos usted encontro comida ahora tiene " << endl;
+                                cout << endl;
+                                cout << "********************************************************************************" << endl;
+                                cout << "Felicidades en su trayecto a recoger recursos usted encontro comida ahora tiene: " << endl;
+                                cout << "********************************************************************************" << endl;
+                                cout << endl;
                                 obtenerComida(comida);
                             }
 
@@ -203,6 +235,10 @@ int main()
                         break;
 
                     default:
+
+                        system("pause");
+                        system("cls");
+
                         break;
                     }
                 }
@@ -224,14 +260,31 @@ int main()
             }
             else
             {
-                cout << "---------------------" << endl;
-                cout << "Fin de la etapa 1" << endl;
-                cout << "---------------------" << endl;
 
-                cout << "Comienzo de la segunda etapa: Construir una balsa" << endl;
-                cout << "Tiene 6 dias para construir la balsa" << endl;
+                /// CLASIFICADO - SE DESCUENTAN LOS KILOS DE COMIDA ETAPA 1
 
-                /// INICIO DE LA ETAPA NRO 2
+                comida = comida - 14;
+
+                cout << "-------------------------------------------------" << endl;
+                cout << "Fin de la primera etapa..." << endl;
+                cout << "Usted ha sobrevivido, avanza a la siguiente ronda" << endl;
+                cout << "Comida restante: " << comida << endl;
+                cout << "-------------------------------------------------" << endl;
+                cout << endl;
+
+                system("pause");
+                system("cls");
+
+                cout << "Comienzo de la segunda etapa: Seguir la corriente" << endl;
+                cout << "Tiene 6 dias para construir una balsa y recolectar 12 kilos de comida" << endl;
+                cout << endl;
+                cout << "Valar Morghulis..." << endl;
+
+                system("pause");
+                system("cls");
+
+                /// INICIO DE LA ETAPA NRO 2 (BALSA)
+
                 for (int i = 1; i < 7; i++)
                 {
                     cout << "Usted esta en el dia" << i << endl;
@@ -240,32 +293,74 @@ int main()
                         cout << ultimoDia << endl;
                     }
                     cout << "Elija una opcion" << endl;
-                    cout << "1. Tronco de arboles" << endl
-                         << "2. Hojas de palmera" << endl
-                         << "3. Caña" << endl;
+                    cout << "1. Para buscar comida" << endl;
+                    cout << "2. Para buscar recursos" << endl;
                     int respuesta;
                     cin >> respuesta;
-                    if (balsa <= 100)
+
+                    system("pause");
+                    system("cls");
+
+                    if (balsa < 100)
                     {
                         switch (respuesta)
                         {
                         case 1:
 
-                        ruleta_chance = obtenerRecursos(balsa);
+                            cout << "-----------------------------------" << endl;
+                            cout << "Eligio comida, ahora elija donde:" << endl;
+                            cout << "-----------------------------------" << endl;
+                            cout << endl;
+                            cout << "1 - Pesca en el rio" << endl;
+                            cout << "2 - Cosecha en la zona de arboles" << endl;
+                            cout << "3 - Cosecha en la zona de arbustos" << endl;
+                            cout << "4 - Para cambiar de opcion" << endl;
+                            cout << endl;
 
+                            int respuesta;
+                            cin >> respuesta;
 
+                            switch(respuesta)
+                            {
+                            case 1:
+                                obtenerComida(comida);
 
-                        system("pause");
-                        system("cls");
+                                system("pause");
+                                system("cls");
+
+                                break;
+
+                            case 2:
+                                obtenerComida(comida);
+
+                                system("pause");
+                                system("cls");
+
+                                break;
+
+                            case 3:
+                                obtenerComida(comida);
+
+                                system("pause");
+                                system("cls");
+
+                                break;
+
+                            default:
+                                system("pause");
+                                system("cls");
+
+                                break;
+                            }
 
                             break;
 
                         case 2:
 
-                        ruleta_chance = obtenerRecursos(balsa);
+                            ruleta_chance = obtenerRecursos(balsa);
 
-                        system("pause");
-                        system("csl");
+                            system("pause");
+                            system("cls");
 
                             break;
 
@@ -288,22 +383,50 @@ int main()
                     }
                     else
                     {
-                        cout << "Usted ha terminado de armar la balsa antes de los 6 dias, usted ahora puede recolectar mas alimentos" << endl;
+                        cout << "Ya consiguio armar la balsa ahora, debe buscar comida..." << endl;
+                        cout << "1. Para buscar comida" << endl;
 
-                        int opcion;
-                        cin >> opcion;
+                        system("pause");
+                        system("cls");
 
-                        switch (opcion)
+                        cout << "-----------------------------------" << endl;
+                        cout << "Eligio comida, ahora elija donde:" << endl;
+                        cout << "-----------------------------------" << endl;
+                        cout << endl;
+                        cout << "1 - Pesca en el rio" << endl;
+                        cout << "2 - Cosecha en la zona de arboles" << endl;
+                        cout << "3 - Cosecha en la zona de arbustos" << endl;
+                        cout << "4 - Para cambiar de opcion" << endl;
+                        cout << endl;
+
+                        int respuesta;
+                        cin >> respuesta;
+
+                        switch (respuesta)
                         {
                         case 1:
 
+                        obtenerComida(comida);
+
+                        system("pause");
+                        system("cls");
                             break;
 
                         case 2:
 
+                        obtenerComida(comida);
+
+                        system("pause");
+                        system("cls");
+
                             break;
 
                         case 3:
+
+                        obtenerComida(comida);
+
+                        system("pause");
+                        system("cls");
 
                             break;
 

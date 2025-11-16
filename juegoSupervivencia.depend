@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1763229724 source:c:\users\colidevs\desktop\vetkko큦 folder\vetkko utn\proga i\codigo\c++\tp juego\juegosupervivencia\funciones.cpp
+1763285682 source:c:\users\colidevs\desktop\vetkko큦 folder\vetkko utn\proga i\codigo\c++\tp juego\juegosupervivencia\funciones.cpp
 	"funciones.h"
 	<iostream>
 	<time.h>
 
-1763180682 source:c:\users\colidevs\desktop\vetkko큦 folder\vetkko utn\proga i\codigo\c++\tp juego\juegosupervivencia\main.cpp
+1763287097 source:c:\users\colidevs\desktop\vetkko큦 folder\vetkko utn\proga i\codigo\c++\tp juego\juegosupervivencia\main.cpp
 	<iostream>
 	"funciones.h"
 	<time.h>
