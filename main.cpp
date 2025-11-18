@@ -234,7 +234,7 @@ int main()
 
             /// INICIO ETAPA 3
 
-            mostrar_etapada_2_completada();
+            mostrar_etapa_2_completada();
 
             int seleccion_ruta;
             cin >> seleccion_ruta;

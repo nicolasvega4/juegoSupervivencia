@@ -17,13 +17,18 @@ void mostrar_etapa_1_completada(int comida);
 void mostrar_bienvenida();
 void mostrar_reglas();
 void menu_principal();
-void mostrar_etapada_2_completada();
+void mostrar_etapa_2_completada();
+int ruta_pantano(int balsa, int comida);
+int ruta_rapidos(int balsa, int comida);
+int ruta_selva(int balsa, int comida);
+int ruleta();
 void step();
 void bitacora(int dia, int comida, int refugio);
 void bitacora_2(int dia, int comida, int balsa);
 void mostrar_menu_dia(int refugio);
 void mostrar_menu_comida();
 void mostrar_menu_comida_etapa_2();
+
 int buscar_comida();
 int buscar_recursos();
 

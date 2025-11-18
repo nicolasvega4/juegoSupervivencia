@@ -303,3 +303,68 @@ int buscar_recursos()
 
     return recursos_obtenidos;
 }
+
+int ruleta()
+{
+    int chance = random_int(1, 100);
+    return chance;
+}
+
+int ruta_pantano(int balsa, int comida)
+{
+    int cantidad_horas = 0;
+    int limite_tiempo = 24;
+    int km_recorridos = 0;
+    int resultado_final = 0;
+    int suma = random_int(2, 3);
+    int resta = random_int(2, 4);
+
+    for (int i = 1; i <= limite_tiempo; i++)
+    {
+        int chance = ruleta();
+        if (chance == 1)
+        {
+            cout << "Un cocodrilo te ataco y destroso la balsa y robandote la comida, por ende quedaste descalificado" << endl;
+            resultado_final = 1;
+            step();
+        }
+        else if (chance > 20)
+        {
+            cout << "Te enredaste con unas lianas y perdiste tiempo, un poco de comida y algo de balso" << endl;
+            suma += cantidad_horas;
+            comida -= resta;
+            balsa -= resta;
+            step();
+        }
+        else if (chance > 40)
+        {
+            cout << "Pudiste pescar un par de" << endl;
+            comida += suma;
+            step();
+        }
+        else
+        {
+            cout << "Todo sige con normalidad..." << endl;
+        }
+
+        if (cantidad_horas > limite_tiempo)
+        {
+            cout << "Lamentablemente te excediste del limite de tiempo y por ende quedaste descalificado." << endl;
+            resultado_final = 0;
+           step(); 
+        }
+        
+
+    }
+
+    return resultado_final;
+}
+
+int ruta_rapidos(int balsa, int comida)
+{
+
+}
+
+int ruta_selva(int balsa, int comida)
+{
+}
