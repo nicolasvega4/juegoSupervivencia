@@ -15,7 +15,8 @@ int main()
     int opcion_menu_principal;
     int comida_obtenida = 0;
     int recursos_obtenidos = 0;
-    const int total_dias=7;
+    const int total_dias = 7;
+    const int total_dias_etapa_2 = 6;
 
     int condicion = 1;
     string ultimoDia = "Usted esta en el ultimo dia";
@@ -88,62 +89,37 @@ int main()
         /// MUERTE DE JUGADOR - DESCALIFICADO
         if (comida < 14 || refugio < 100)
         {
-            cout << "--------------------------------" << endl;
-            cout << "Lo sentimos usted ha muerto..." << endl;
-            cout << "Causa de la muerte: Hambruna " << endl;
-            cout << "--------------------------------" << endl;
+            muerte_jugador_etapa_2();
 
             comida = 0;
             refugio = 0;
-
 
             system("pause");
             system("cls");
         }
         else
         {
-
             /// CLASIFICADO - SE DESCUENTAN LOS KILOS DE COMIDA ETAPA 1
 
             comida = comida - 14;
-
-            cout << "-------------------------------------------------" << endl;
-            cout << "Fin de la primera etapa..." << endl;
-            cout << "Usted ha sobrevivido, avanza a la siguiente ronda" << endl;
-            cout << "Comida restante: " << comida << endl;
-            cout << "-------------------------------------------------" << endl;
-            cout << endl;
-
-            system("pause");
-            system("cls");
-
-            cout << "Comienzo de la segunda etapa: Seguir la corriente" << endl;
-            cout << "Tiene 6 dias para construir una balsa y recolectar 12 kilos de comida" << endl;
-            cout << endl;
-            cout << "Valar Morghulis..." << endl;
-
-            system("pause");
-            system("cls");
+            mostrar_etapa_1_completada(comida);
 
             /// INICIO DE LA ETAPA NRO 2 (BALSA)
 
-            for (int i = 1; i < 7; i++)
+            for (int i = 1; i < total_dias_etapa_2; i++)
             {
-                cout << "====================================" << endl;
-                cout << "Usted esta en el dia " << i << endl;
-                cout << endl;
-                cout << "Reservas de comida restantes: " << comida << endl;
-                cout << "Progreso en el armado de la balsa: " << balsa << "%" << endl;
-                cout << "====================================" << endl;
-                cout << endl;
+                const int dia_2 = i;
 
-                if (i == 6)
+                bitacora_2(dia_2, comida, balsa);
+                
+                if (dia_2 == total_dias_etapa_2)
                 {
                     cout << ultimoDia << endl;
                 }
+
                 cout << "Elija una opcion" << endl;
                 cout << "1. Para buscar comida" << endl;
-                cout << "2. Para buscar recursos" << endl;
+                cout << "2. Para buscar recursos para armar la balsa" << endl;
                 int respuesta;
                 cin >> respuesta;
 
@@ -156,15 +132,7 @@ int main()
                     {
                     case 1:
 
-                        cout << "-----------------------------------" << endl;
-                        cout << "Eligio comida, ahora elija donde:" << endl;
-                        cout << "-----------------------------------" << endl;
-                        cout << endl;
-                        cout << "1 - Pesca en el rio" << endl;
-                        cout << "2 - Cosecha en la zona de arboles" << endl;
-                        cout << "3 - Cosecha en la zona de arbustos" << endl;
-                        cout << "4 - Para cambiar de opcion" << endl;
-                        cout << endl;
+                        mostrar_menu_comida_etapa_2();
 
                         int respuesta;
                         cin >> respuesta;
@@ -206,7 +174,7 @@ int main()
 
                     case 2:
 
-                        obtenerRecursos();
+                        balsa += obtenerRecursos();
 
                         system("pause");
                         system("cls");
@@ -223,21 +191,7 @@ int main()
                 }
                 else
                 {
-                    cout << "Ya consiguio armar la balsa ahora, debe buscar comida..." << endl;
-                    cout << "1. Para buscar comida" << endl;
-
-                    system("pause");
-                    system("cls");
-
-                    cout << "-----------------------------------" << endl;
-                    cout << "Eligio comida, ahora elija donde:" << endl;
-                    cout << "-----------------------------------" << endl;
-                    cout << endl;
-                    cout << "1 - Pesca en el rio" << endl;
-                    cout << "2 - Cosecha en la zona de arboles" << endl;
-                    cout << "3 - Cosecha en la zona de arbustos" << endl;
-                    cout << "4 - Para cambiar de opcion" << endl;
-                    cout << endl;
+                    mostrar_balsa_armada();
 
                     int respuesta;
                     cin >> respuesta;
@@ -311,8 +265,6 @@ int main()
 
     }
     while (condicion == 1);
-
-
     return 0;
 }
 

@@ -9,14 +9,14 @@ void step()
     system("cls");
 }
 
-///Funcion random
+/// Funcion random
 int random_int(int minimo, int maximo)
 {
     int num = rand() % (maximo - minimo + 1) + minimo;
     return num;
 }
 
-///Funcion para obtener comida
+/// Funcion para obtener comida
 int obtenerComida()
 {
     return random_int(2, 5);
@@ -30,7 +30,7 @@ void cartel_obtener_comida(int comida_obtenida, string zona)
     cout << "-------------------------------" << endl;
 }
 
-///Funcion para obtener recursos
+/// Funcion para obtener recursos
 int obtenerRecursos()
 {
     return random_int(20, 30);
@@ -42,7 +42,7 @@ void cartel_obtener_recursos(int recursos_obtenidos, string zona_recursos)
     cout << "Usted consiguio " << recursos_obtenidos << " materiales en su busqueda en:" << zona_recursos << endl;
     cout << "--------------------------------------------------------" << endl;
 }
-///
+
 void mostrar_bienvenida()
 {
     cout << "|=========================================================|" << endl;
@@ -58,7 +58,7 @@ void mostrar_reglas()
     cout << endl;
     cout << "En la primer etapa debera armar un refugio y recolectar alimentos" << endl;
     cout << endl;
-    cout << "La condiciones para avanzar a la siguiente etapa son:" <<endl;
+    cout << "La condiciones para avanzar a la siguiente etapa son:" << endl;
     cout << " *Consiguir el 100% del refugio" << endl;
     cout << " *Recolectar 14 kilos de comida" << endl;
     cout << "------------------------------------------------------------------" << endl;
@@ -68,7 +68,7 @@ void mostrar_reglas()
 void menu_principal()
 {
     cout << "----------------------" << endl;
-    cout << "¿Desea jugar al juego? " << endl;
+    cout << "ï¿½Desea jugar al juego? " << endl;
     cout << endl;
     cout << "1 - Iniciar juego" << endl;
     cout << "2 - Salir del juego" << endl;
@@ -84,7 +84,17 @@ void bitacora(int dia, int comida, int refugio)
     cout << "Progreso en el armado del refugio: " << refugio << "%" << endl;
     cout << "====================================" << endl;
     cout << endl;
+}
 
+void bitacora_2(int dia, int comida, int balsa)
+{
+    cout << "====================================" << endl;
+    cout << "Usted esta en el dia " << dia << endl;
+    cout << endl;
+    cout << "Reservas de comida restantes: " << comida << endl;
+    cout << "Progreso en el armado de la balsa: " << balsa << "%" << endl;
+    cout << "====================================" << endl;
+    cout << endl;
 }
 
 void mostrar_menu_dia(int refugio)
@@ -94,13 +104,12 @@ void mostrar_menu_dia(int refugio)
     cout << "-------------------------------" << endl;
     cout << endl;
     cout << "1. Para buscar para comida" << endl;
-    if(!(refugio>=100))
+    if (!(refugio >= 100))
     {
         cout << "2. Para buscar para recursos" << endl;
     }
     cout << endl;
 }
-
 
 void mostrar_menu_comida()
 {
@@ -114,6 +123,19 @@ void mostrar_menu_comida()
     cout << "4 - Para cambiar de opcion" << endl;
 }
 
+void mostrar_menu_comida_etapa_2()
+{
+    cout << "-----------------------------------" << endl;
+    cout << "Eligio comida, ahora elija donde:" << endl;
+    cout << "-----------------------------------" << endl;
+    cout << endl;
+    cout << "1 - Pesca en el rio" << endl;
+    cout << "2 - Cosecha en la zona de arboles" << endl;
+    cout << "3 - Cosecha en la zona de arbustos" << endl;
+    cout << "4 - Para cambiar de opcion" << endl;
+    cout << endl;
+}
+
 void mostrar_zonas_recursos()
 {
     cout << "------------------------------------------" << endl;
@@ -123,8 +145,56 @@ void mostrar_zonas_recursos()
     cout << "1 - Zona de arboles" << endl;
     cout << "2 - Zona de arbustos" << endl;
     cout << "3 - Zona pantano" << endl;
-    cout << "4 - Montaña" << endl;
+    cout << "4 - Montaï¿½a" << endl;
     cout << "5 - cambiar de opcion" << endl;
+}
+
+void mostrar_balsa_armada()
+{
+    cout << "Ya consiguio armar la balsa ahora, debe buscar comida..." << endl;
+    cout << "1. Para buscar comida" << endl;
+
+    system("pause");
+    system("cls");
+
+    cout << "-----------------------------------" << endl;
+    cout << "Eligio comida, ahora elija donde:" << endl;
+    cout << "-----------------------------------" << endl;
+    cout << endl;
+    cout << "1 - Pesca en el rio" << endl;
+    cout << "2 - Cosecha en la zona de arboles" << endl;
+    cout << "3 - Cosecha en la zona de arbustos" << endl;
+    cout << "4 - Para cambiar de opcion" << endl;
+    cout << endl;
+}
+
+void muerte_jugador_etapa_2()
+{
+    cout << "--------------------------------" << endl;
+    cout << "Lo sentimos usted ha muerto..." << endl;
+    cout << "Causa de la muerte: Hambruna " << endl;
+    cout << "--------------------------------" << endl;
+}
+
+void mostrar_etapa_1_completada(int comida)
+{
+    cout << "-------------------------------------------------" << endl;
+    cout << "Fin de la primera etapa..." << endl;
+    cout << "Usted ha sobrevivido, avanza a la siguiente ronda" << endl;
+    cout << "Comida restante: " << comida << endl;
+    cout << "-------------------------------------------------" << endl;
+    cout << endl;
+
+    system("pause");
+    system("cls");
+
+    cout << "Comienzo de la segunda etapa: Seguir la corriente" << endl;
+    cout << "Tiene 6 dias para construir una balsa y recolectar 12 kilos de comida" << endl;
+    cout << endl;
+    cout << "Valar Morghulis..." << endl;
+
+    system("pause");
+    system("cls");
 }
 
 /*///Funcion para ruleta de comida
@@ -141,7 +211,6 @@ void ruletaComida()
         cout << "**************************************************************" << endl;
     }
 }*/
-
 
 int buscar_comida()
 {
@@ -176,7 +245,6 @@ int buscar_comida()
     return comida_obtenida;
 }
 
-
 int buscar_recursos()
 {
 
@@ -203,13 +271,12 @@ int buscar_recursos()
     case 3:
         cartel_obtener_recursos(recursos_obtenidos, "Zona pantano");
 
-
         system("pause");
 
         break;
     case 4:
 
-        cartel_obtener_recursos(recursos_obtenidos, "montaña");
+        cartel_obtener_recursos(recursos_obtenidos, "montaï¿½a");
 
         system("pause");
 
@@ -220,5 +287,4 @@ int buscar_recursos()
     }
 
     return recursos_obtenidos;
-
 }
