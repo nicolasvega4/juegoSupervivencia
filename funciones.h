@@ -17,6 +17,7 @@ void mostrar_etapa_1_completada(int comida);
 void mostrar_bienvenida();
 void mostrar_reglas();
 void menu_principal();
+void mostrar_etapada_2_completada();
 void step();
 void bitacora(int dia, int comida, int refugio);
 void bitacora_2(int dia, int comida, int balsa);
