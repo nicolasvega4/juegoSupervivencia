@@ -310,61 +310,42 @@ int ruleta()
     return chance;
 }
 
-int ruta_pantano(int balsa, int comida)
+int tipo_ruta(int balsa, int comida, string tipo)
 {
-    int cantidad_horas = 0;
-    int limite_tiempo = 24;
-    int km_recorridos = 0;
-    int resultado_final = 0;
-    int suma = random_int(2, 3);
-    int resta = random_int(2, 4);
+    int resultado_final;
 
-    for (int i = 1; i <= limite_tiempo; i++)
+    if (tipo == "pantano")
     {
-        int chance = ruleta();
-        if (chance == 1)
-        {
-            cout << "Un cocodrilo te ataco y destroso la balsa y robandote la comida, por ende quedaste descalificado" << endl;
-            resultado_final = 1;
-            step();
-        }
-        else if (chance > 20)
-        {
-            cout << "Te enredaste con unas lianas y perdiste tiempo, un poco de comida y algo de balso" << endl;
-            suma += cantidad_horas;
-            comida -= resta;
-            balsa -= resta;
-            step();
-        }
-        else if (chance > 40)
-        {
-            cout << "Pudiste pescar un par de" << endl;
-            comida += suma;
-            step();
-        }
-        else
-        {
-            cout << "Todo sige con normalidad..." << endl;
-        }
-
-        if (cantidad_horas > limite_tiempo)
-        {
-            cout << "Lamentablemente te excediste del limite de tiempo y por ende quedaste descalificado." << endl;
-            resultado_final = 0;
-           step(); 
-        }
-        
-
+        resultado_final = ruta(balsa, comida, 48);
+    }
+    else if (tipo == "rapido")
+    {
+        resultado_final = ruta(balsa, comida, 12);
+    }
+    else
+    {
+        resultado_final = ruta(balsa, comida, 24);
     }
 
     return resultado_final;
 }
 
-int ruta_rapidos(int balsa, int comida)
-{
+int ruta(int balsa, int comida, int recorrido) {
+    int resultado_final = 0;
+    int tiempo_maximo = 24;
+    int acc_recorrido = 0;
+    int tiempo_recorrido = 0;
+    
+    while (tiempo_recorrido < tiempo_maximo)
+    {
+        int sumar = random_int(3, 4);
+        acc_recorrido += sumar;
+    }
+    
+    if (acc_recorrido >= recorrido)
+    {
+        resultado_final = 1;
+    }
 
-}
-
-int ruta_selva(int balsa, int comida)
-{
+    return resultado_final;
 }

@@ -18,9 +18,9 @@ void mostrar_bienvenida();
 void mostrar_reglas();
 void menu_principal();
 void mostrar_etapa_2_completada();
-int ruta_pantano(int balsa, int comida);
-int ruta_rapidos(int balsa, int comida);
-int ruta_selva(int balsa, int comida);
+int tipo_ruta(int balsa, int comida,string tipo);
+int ruta(int balsa, int comida, int recorrido);
+
 int ruleta();
 void step();
 void bitacora(int dia, int comida, int refugio);
