@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 #include "funciones.h"
+#include "visuales.h"
 #include <time.h>
 
 int main()
@@ -111,7 +112,7 @@ int main()
                 const int dia_2 = i;
 
                 bitacora_2(dia_2, comida, balsa);
-                
+
                 if (dia_2 == total_dias_etapa_2)
                 {
                     cout << ultimoDia << endl;
@@ -132,7 +133,7 @@ int main()
                     {
                     case 1:
 
-                        mostrar_menu_comida_etapa_2();
+                        mostrar_menu_comida();
 
                         int respuesta;
                         cin >> respuesta;

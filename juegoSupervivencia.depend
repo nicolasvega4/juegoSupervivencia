@@ -1,15 +1,27 @@
 # depslib dependency file v1.0
-1763440829 source:c:\users\colidevs\desktop\vetkko큦 folder\vetkko utn\proga i\codigo\c++\tp juego\juegosupervivencia\funciones.cpp
+1763616508 source:c:\users\colidevs\desktop\vetkko큦 folder\vetkko utn\proga i\codigo\c++\tp juego\juegosupervivencia\funciones.cpp
 	"funciones.h"
 	<iostream>
 	<time.h>
 
-1763441486 source:c:\users\colidevs\desktop\vetkko큦 folder\vetkko utn\proga i\codigo\c++\tp juego\juegosupervivencia\main.cpp
+1763616010 source:c:\users\colidevs\desktop\vetkko큦 folder\vetkko utn\proga i\codigo\c++\tp juego\juegosupervivencia\main.cpp
 	<iostream>
 	"funciones.h"
+	"visuales.h"
 	<time.h>
 
-1763441009 c:\users\colidevs\desktop\vetkko큦 folder\vetkko utn\proga i\codigo\c++\tp juego\juegosupervivencia\funciones.h
+1763621695 c:\users\colidevs\desktop\vetkko큦 folder\vetkko utn\proga i\codigo\c++\tp juego\juegosupervivencia\funciones.h
+	<iostream>
+	"funciones.h"
+	"visuales.h"
+	<time.h>
+
+1763621695 source:c:\users\colidevs\desktop\vetkko큦 folder\vetkko utn\proga i\codigo\c++\tp juego\juegosupervivencia\visuales.cpp
+	"funciones.h"
+	<iostream>
+	<time.h>
+
+1763621695 c:\users\colidevs\desktop\vetkko큦 folder\vetkko utn\proga i\codigo\c++\tp juego\juegosupervivencia\visuales.h
 	<iostream>
 	"funciones.h"
 	<time.h>
