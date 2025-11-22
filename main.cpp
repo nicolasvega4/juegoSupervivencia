@@ -22,6 +22,15 @@ int main()
     int condicion = 1;
     string ultimoDia = "Usted esta en el ultimo dia";
 
+    ///Estas variables se utilizaran como parametros en funciones para cada switch
+    ///en caso de que la ruleta amenaza devuelva int > 0
+    ///se explayaran luego
+    string amenaza_cocodrilo = "COCODRILOOO";
+    string amenaza_rocas = "ROCAASS" ;
+    string amenaza_clima = "TORMENTAAA";
+
+    string
+
     do
     {
         mostrar_bienvenida();
@@ -59,7 +68,7 @@ int main()
                 cout << ultimoDia << endl;
             }
 
-            mostrar_menu_dia(refugio);
+            mostrar_menu_diario(refugio);
 
             int accion_del_dia;
             cin >> accion_del_dia;
@@ -90,7 +99,7 @@ int main()
         /// MUERTE DE JUGADOR - DESCALIFICADO
         if (comida < 14 || refugio < 100)
         {
-            muerte_jugador_etapa_2();
+            muerte_jugador_etapa_1y2();
 
             comida = 0;
             refugio = 0;
@@ -103,7 +112,7 @@ int main()
             /// CLASIFICADO - SE DESCUENTAN LOS KILOS DE COMIDA ETAPA 1
 
             comida = comida - 14;
-            mostrar_etapa_1_completada(comida);
+            cartel_avanza_etapa2(comida);
 
             /// INICIO DE LA ETAPA NRO 2 (BALSA)
 
@@ -235,23 +244,7 @@ int main()
 
             /// INICIO ETAPA 3
 
-            mostrar_etapa_2_completada();
-
-            int seleccion_ruta;
-            cin >> seleccion_ruta;
-
-            switch (seleccion_ruta)
-            {
-            case 1:
-
-                break;
-            case 2:
-
-                break;
-            case 3:
-
-                break;
-            }
+            inicio_etapa_3();
         }
 
     }

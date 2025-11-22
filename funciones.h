@@ -19,4 +19,10 @@ int ruleta();
 int buscar_comida();
 int buscar_recursos();
 
+int tiempo_base_ruta();
+int atraso_tiempo();
+int mejora_tiempo();
+
+void inicio_etapa_3();///Engloba toda la etapa 3, no esta hecho aun
+
 #endif // FUNCIONES_H_INCLUDED

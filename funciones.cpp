@@ -121,48 +121,82 @@ int buscar_recursos()
     return recursos_obtenidos;
 }
 
-int ruleta()
+///ETAPA 3 RUTAS
+
+///Tiempo base que lleva la ruta
+int tiempo_base_ruta()
 {
-    int chance = random_int(1, 100);
-    return chance;
+    return random_int(15,25);
 }
 
-int tipo_ruta(int balsa, int comida, string tipo)
+///Probabilidad del 50% en atrasarse X cantidad de horas
+int ruleta_atraso()
 {
-    int resultado_final;
-
-    if (tipo == "pantano")
+    int chance = random_int(1, 100);
+    if(chance>50)
     {
-        resultado_final = ruta(balsa, comida, 48);
-    }
-    else if (tipo == "rapido")
-    {
-        resultado_final = ruta(balsa, comida, 12);
+        return random_int(3,8);
     }
     else
     {
-        resultado_final = ruta(balsa, comida, 24);
+        return 0;
     }
-
-    return resultado_final;
 }
 
-int ruta(int balsa, int comida, int recorrido) {
-    int resultado_final = 0;
+///Probabilidad del 50% en recuperar X cantidad de horas
+int ruleta_avance()
+{
+    int chance = random_int(1, 100);
+    if(chance>50)
+    {
+        return random_int(3,7);
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+///Horas en llegar a destino
+int total_tiempo()
+{
+    int tiempo_avance = ruleta_avance();
+    int tiempo_atraso = ruleta_atraso();
+    int tiempo_recorrido = tiempo_base_ruta() + tiempo_atraso - tiempo_avance;
+
+    if(tiempo_recorrido<24)
+    {
+        return tiempo_recorrido;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+
+void inicio_etapa_3()
+{
+    cartel_avanza_etapa3();
+    mostrar_rutas_etapa3();
+
+    int seleccion_ruta;
+    cin >> seleccion_ruta;
+
     int tiempo_maximo = 24;
-    int acc_recorrido = 0;
     int tiempo_recorrido = 0;
+    int kilometros_recorridos = 0;
 
-    while (tiempo_recorrido < tiempo_maximo)
+    switch (seleccion_ruta)
     {
-        int sumar = random_int(3, 4);
-        acc_recorrido += sumar;
-    }
+    case 1:
 
-    if (acc_recorrido >= recorrido)
-    {
-        resultado_final = 1;
-    }
+        break;
+    case 2:
 
-    return resultado_final;
+        break;
+    case 3:
+
+        break;
+    }
 }
