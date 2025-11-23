@@ -14,6 +14,11 @@ void step()
 int random_int(int minimo, int maximo)
 {
     int num = rand() % (maximo - minimo + 1) + minimo;
+    if (minimo == 0)
+    {
+        int num = rand() % (maximo - minimo) + minimo;
+    }
+
     return num;
 }
 
@@ -121,21 +126,21 @@ int buscar_recursos()
     return recursos_obtenidos;
 }
 
-///ETAPA 3 RUTAS
+/// ETAPA 3 RUTAS
 
-///Tiempo base que lleva la ruta
+/// Tiempo base que lleva la ruta
 int tiempo_base_ruta()
 {
-    return random_int(15,25);
+    return random_int(15, 25);
 }
 
-///Probabilidad del 50% en atrasarse X cantidad de horas
+/// Probabilidad del 50% en atrasarse X cantidad de horas
 int ruleta_atraso()
 {
     int chance = random_int(1, 100);
-    if(chance>50)
+    if (chance > 50)
     {
-        return random_int(3,8);
+        return random_int(3, 8);
     }
     else
     {
@@ -143,13 +148,13 @@ int ruleta_atraso()
     }
 }
 
-///Probabilidad del 50% en recuperar X cantidad de horas
+/// Probabilidad del 50% en recuperar X cantidad de horas
 int ruleta_avance()
 {
     int chance = random_int(1, 100);
-    if(chance>50)
+    if (chance > 50)
     {
-        return random_int(3,7);
+        return random_int(3, 7);
     }
     else
     {
@@ -157,14 +162,14 @@ int ruleta_avance()
     }
 }
 
-///Horas en llegar a destino
+/// Horas en llegar a destino
 int total_tiempo()
 {
     int tiempo_avance = ruleta_avance();
     int tiempo_atraso = ruleta_atraso();
     int tiempo_recorrido = tiempo_base_ruta() + tiempo_atraso - tiempo_avance;
 
-    if(tiempo_recorrido<24)
+    if (tiempo_recorrido < 24)
     {
         return tiempo_recorrido;
     }
@@ -173,7 +178,6 @@ int total_tiempo()
         return 0;
     }
 }
-
 
 void inicio_etapa_3()
 {
@@ -198,5 +202,24 @@ void inicio_etapa_3()
     case 3:
 
         break;
+    }
+}
+
+void jugadores_descalificados(int TAM, int jugador_numero[], string mensaje_calificado[])
+{
+    int random = random_int(0, 1);
+    string mensaje_descalificado = "quedo descalificado";
+
+    for (int i = 0; i < TAM; i++)
+    {
+        if (jugador_numero[i] != 0)
+        {
+            jugador_numero[i] = random;
+        }
+        
+        if (jugador_numero[i] == 0)
+        {
+            mensaje_calificado[i] = mensaje_descalificado;
+        }
     }
 }

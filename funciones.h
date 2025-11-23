@@ -14,6 +14,8 @@ int obtenerRecursos();
 int tipo_ruta(int balsa, int comida,string tipo);
 int ruta(int balsa, int comida, int recorrido);
 
+void jugadores_descalificados(int TAM, int jugador_numero[], string mensaje_calificado[]);
+
 int ruleta();
 
 int buscar_comida();

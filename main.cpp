@@ -10,16 +10,21 @@ int main()
     srand(time(NULL));
 
     /// Declaracion de variables
+    const int total_dias = 7;
+    const int total_dias_etapa_2 = 6;
+    const int TAM = 7;
     int refugio = 0;
     int comida = 0;
     int balsa = 0;
-    int opcion_menu_principal;
     int comida_obtenida = 0;
     int recursos_obtenidos = 0;
-    const int total_dias = 7;
-    const int total_dias_etapa_2 = 6;
-
+    int opcion_menu_principal;
+    int puesto[TAM] = { 2, 3, 4, 5, 6, 7, 8};
+    int tiempo_llegada[TAM];
+    int numero_descalificado[TAM] = {1, 1, 1, 1, 1, 1, 1};
+    string clasificado[TAM] = {"clasifico", "clasifico", "clasifico", "clasifico", "clasifico", "clasifico", "clasifico"};
     int condicion = 1;
+
     string ultimoDia = "Usted esta en el ultimo dia";
 
     ///Estas variables se utilizaran como parametros en funciones para cada switch
@@ -28,8 +33,6 @@ int main()
     string amenaza_cocodrilo = "COCODRILOOO";
     string amenaza_rocas = "ROCAASS" ;
     string amenaza_clima = "TORMENTAAA";
-
-    string
 
     do
     {
@@ -246,9 +249,8 @@ int main()
 
             inicio_etapa_3();
         }
-
-    }
-    while (condicion == 1);
+    } while (condicion == 1);
+    
     return 0;
 }
 
