@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 #include "funciones.h"
+#include "funcionesJugadores.h"
+#include "funcionesRutas.h"
 #include "visuales.h"
 #include <time.h>
 
@@ -10,8 +12,7 @@ int main()
     srand(time(NULL));
 
     /// Declaracion de variables
-    const int total_dias = 7;
-    const int total_dias_etapa_2 = 6;
+    int total_dias = 7;
     const int TAM = 7;
     int refugio = 0;
     int comida = 0;
@@ -19,10 +20,14 @@ int main()
     int comida_obtenida = 0;
     int recursos_obtenidos = 0;
     int opcion_menu_principal;
-    int puesto[TAM] = { 2, 3, 4, 5, 6, 7, 8};
-    int tiempo_llegada[TAM];
-    int numero_descalificado[TAM] = {1, 1, 1, 1, 1, 1, 1};
-    string clasificado[TAM] = {"clasifico", "clasifico", "clasifico", "clasifico", "clasifico", "clasifico", "clasifico"};
+
+    ///Declara vector de jugador
+    int jugador[6];
+
+    ///Variables para parametros de funcion jugadores
+    int tiempo_refugio = 0;
+    int puesto = 0;
+
     int condicion = 1;
 
     string ultimoDia = "Usted esta en el ultimo dia";
@@ -58,14 +63,13 @@ int main()
 
         cout << "Etapa 1, armar un refugio" << endl;
         comida_obtenida = 0;
+        inicializar_jugador(1, jugador);
         for (int i = 1; i <= total_dias; i++)
         {
             const int dia = i;
 
             system("cls");
-
-            bitacora(dia,comida,refugio);
-
+            bitacora(dia,jugador,1);
             if (dia == total_dias)
             {
                 cout << ultimoDia << endl;
@@ -116,16 +120,17 @@ int main()
 
             comida = comida - 14;
             cartel_avanza_etapa2(comida);
+            total_dias = 6;
 
             /// INICIO DE LA ETAPA NRO 2 (BALSA)
 
-            for (int i = 1; i < total_dias_etapa_2; i++)
+            for (int i = 1; i < total_dias; i++)
             {
-                const int dia_2 = i;
+                const int dia = i;
 
-                bitacora_2(dia_2, comida, balsa);
+                bitacora(dia,jugador,2);
 
-                if (dia_2 == total_dias_etapa_2)
+                if (dia == total_dias)
                 {
                     cout << ultimoDia << endl;
                 }
@@ -153,7 +158,7 @@ int main()
                         switch(respuesta)
                         {
                         case 1:
-                            comida+=obtenerComida();
+                            comida+=generar_comida();
 
                             system("pause");
                             system("cls");
@@ -161,7 +166,7 @@ int main()
                             break;
 
                         case 2:
-                            comida+=obtenerComida();
+                            comida+=generar_comida();
 
                             system("pause");
                             system("cls");
@@ -169,7 +174,7 @@ int main()
                             break;
 
                         case 3:
-                            comida+=obtenerComida();
+                            comida+=generar_comida();
 
                             system("pause");
                             system("cls");
@@ -187,7 +192,7 @@ int main()
 
                     case 2:
 
-                        balsa += obtenerRecursos();
+                        balsa += generar_recursos();
 
                         system("pause");
                         system("cls");
@@ -213,7 +218,7 @@ int main()
                     {
                     case 1:
 
-                        comida+=obtenerComida();
+                        comida+=generar_comida();
 
                         system("pause");
                         system("cls");
@@ -221,7 +226,7 @@ int main()
 
                     case 2:
 
-                        comida+=obtenerComida();
+                        comida+=generar_comida();
 
                         system("pause");
                         system("cls");
@@ -230,7 +235,7 @@ int main()
 
                     case 3:
 
-                        comida+=obtenerComida();
+                        comida+=generar_comida();
 
                         system("pause");
                         system("cls");
@@ -250,7 +255,7 @@ int main()
             inicio_etapa_3();
         }
     } while (condicion == 1);
-    
+
     return 0;
 }
 

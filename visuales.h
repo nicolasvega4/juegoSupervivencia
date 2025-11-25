@@ -10,9 +10,13 @@ void mostrar_bienvenida();
 void mostrar_reglas();
 void menu_principal();
 
+///Vectores jugadores
+void mostrar_vector(int vector_jugadores[]);
+
 ///Bitacora
-void bitacora(int dia, int comida, int refugio);
-void bitacora_2(int dia, int comida, int balsa);
+//void bitacora(int dia, int comida, int refugio);
+void bitacora(int dia, int jugador[], int etapa);
+void bitacora_etapa2(int dia_2, int comida, int balsa);
 
 ///Carteles recursos y comida
 void cartel_obtener_comida(int comida_obtenida, string zona);

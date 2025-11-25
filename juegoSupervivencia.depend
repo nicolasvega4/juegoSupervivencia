@@ -1,29 +1,66 @@
 # depslib dependency file v1.0
-1763842081 source:c:\users\colidevs\desktop\vetkko큦 folder\vetkko utn\proga i\codigo\c++\tp juego\juegosupervivencia\funciones.cpp
+1764034724 source:c:\users\colidevs\desktop\vetkko큦 folder\vetkko utn\proga i\codigo\c++\tp juego\juegosupervivencia\funciones.cpp
 	"funciones.h"
 	"visuales.h"
 	<iostream>
 	<time.h>
 
-1763795693 source:c:\users\colidevs\desktop\vetkko큦 folder\vetkko utn\proga i\codigo\c++\tp juego\juegosupervivencia\main.cpp
+1764037317 source:c:\users\colidevs\desktop\vetkko큦 folder\vetkko utn\proga i\codigo\c++\tp juego\juegosupervivencia\main.cpp
+	<iostream>
+	"funciones.h"
+	"funcionesJugadores.h"
+	"funcionesRutas.h"
+	"visuales.h"
+	<time.h>
+
+1764037317 c:\users\colidevs\desktop\vetkko큦 folder\vetkko utn\proga i\codigo\c++\tp juego\juegosupervivencia\funciones.h
 	<iostream>
 	"funciones.h"
 	"visuales.h"
 	<time.h>
 
-1763831865 c:\users\colidevs\desktop\vetkko큦 folder\vetkko utn\proga i\codigo\c++\tp juego\juegosupervivencia\funciones.h
+1764037317 source:c:\users\colidevs\desktop\vetkko큦 folder\vetkko utn\proga i\codigo\c++\tp juego\juegosupervivencia\visuales.cpp
+	"funciones.h"
+	"visuales.h"
+	"funcionesJugadores.h"
+	"funcionesRutas.h"
+	<iostream>
+	<time.h>
+
+1764030533 c:\users\colidevs\desktop\vetkko큦 folder\vetkko utn\proga i\codigo\c++\tp juego\juegosupervivencia\visuales.h
 	<iostream>
 	"funciones.h"
+	<time.h>
+
+1764037316 source:c:\users\colidevs\desktop\vetkko큦 folder\vetkko utn\proga i\codigo\c++\tp juego\juegosupervivencia\funcionesjugadores.cpp
+	"funciones.h"
+	"visuales.h"
+	"funcionesJugadores.h"
+	"funcionesRutas.h"
+	<iostream>
+	<time.h>
+
+1764037316 c:\users\colidevs\desktop\vetkko큦 folder\vetkko utn\proga i\codigo\c++\tp juego\juegosupervivencia\funcionesjugadores.h
+	<iostream>
+	"funciones.h"
+	"funcionesJugadores.h"
+	"funcionesRutas.h"
 	"visuales.h"
 	<time.h>
 
-1763842079 source:c:\users\colidevs\desktop\vetkko큦 folder\vetkko utn\proga i\codigo\c++\tp juego\juegosupervivencia\visuales.cpp
-	"funciones.h"
+1764037317 c:\users\colidevs\desktop\vetkko큦 folder\vetkko utn\proga i\codigo\c++\tp juego\juegosupervivencia\funcionesrutas.h
 	<iostream>
+	"funciones.h"
+	"funcionesJugadores.h"
+	"funcionesRutas.h"
+	"visuales.h"
 	<time.h>
 
-1763842143 c:\users\colidevs\desktop\vetkko큦 folder\vetkko utn\proga i\codigo\c++\tp juego\juegosupervivencia\visuales.h
-	<iostream>
+1764037317 source:c:\users\colidevs\desktop\vetkko큦 folder\vetkko utn\proga i\codigo\c++\tp juego\juegosupervivencia\funcionesrutas.cpp
 	"funciones.h"
+	"visuales.h"
+	"funcionesJugadores.h"
+	"funcionesRutas.h"
+	<iostream>
 	<time.h>
 

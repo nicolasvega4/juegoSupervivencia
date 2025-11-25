@@ -1,7 +1,15 @@
 #include "funciones.h"
+#include "visuales.h"
+#include "funcionesJugadores.h"
+#include "funcionesRutas.h"
 #include <iostream>
 using namespace std;
 #include <time.h>
+
+void mostrar_vector(int vector_jugadores[])
+{
+
+}
 
 void mostrar_bienvenida()
 {
@@ -52,18 +60,27 @@ void cartel_obtener_recursos(int recursos_obtenidos, string zona_recursos)
     cout << "--------------------------------------------------------" << endl;
 }
 
-void bitacora(int dia, int comida, int refugio)
+void bitacora(int dia, int jugador[], int etapa)
 {
     cout << "====================================" << endl;
     cout << "Usted esta en el dia " << dia << endl;
+    cout << "Usted esta en la etapa " << etapa << endl;
     cout << endl;
-    cout << "Reservas de comida restantes: " << comida << endl;
-    cout << "Progreso en el armado del refugio: " << refugio << "%" << endl;
+    cout << "Reservas de comida restantes: " << obtener_comida(jugador) << endl;
+    switch(etapa)
+    {
+    case 1:
+        cout << "Progreso en el armado del refugio: " << obtener_progreso_refugio(jugador) << "%" << endl;
+        break;
+    case 2:
+        cout << "Progreso en el armado de la balsa: " << obtener_progreso_balsa(jugador) << "%" << endl;
+        break;
+    }
     cout << "====================================" << endl;
     cout << endl;
 }
 
-void bitacora_2(int dia, int comida, int balsa)
+void bitacora_etapa2(int dia, int comida, int balsa)
 {
     cout << "====================================" << endl;
     cout << "Usted esta en el dia " << dia << endl;
@@ -217,20 +234,20 @@ void cartel_eligio_ruta(string ruta, string amenaza)
 
 ///ej: visualizacion if(tiempo_recorrido>tiempo_maximo){mostrar_navio_exitoso()}else{mostrar_navio_fracaso}
 
-void mostrar_navio_exitoso()
+void mostrar_navio_exitoso(int total_tiempo)
 {
     ///Explayar luego de crear vectores de jugadores
     cout << "================================================" << endl;
     cout << "Usted ha logrado llegar en tiempo al destino" << endl;
-    cout << "Tiempo total hasta llegar al punto de llegada: " << endl;
+    cout << "Tiempo total hasta llegar al punto de llegada: " << total_tiempo << endl;
     cout << "================================================" << endl;
 }
 
-void mostrar_navio_muerte()
+void mostrar_navio_muerte(string )
 {
     ///Explayar luego de crear vectores de jugadores
     cout << "============================================" << endl;
-    cout << "Usted ha muerto en el trayecto" << endl;
+    cout << "Usted ha muerto en el trayecto..." << endl;
     cout << "Causa de la muerte: " << endl;
     cout << "============================================" << endl;
 }

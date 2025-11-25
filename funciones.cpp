@@ -1,5 +1,7 @@
 #include "funciones.h"
 #include "visuales.h"
+#include "funcionesJugadores.h"
+#include "funcionesRutas.h"
 #include <iostream>
 using namespace std;
 #include <time.h>
@@ -22,14 +24,24 @@ int random_int(int minimo, int maximo)
     return num;
 }
 
+int refugio_tiempo()
+{
+    return random_int(0, 4);
+}
+
+int cantidadcomida()
+{
+    return random_int(7,21);
+}
+
 /// Funcion para obtener comida
-int obtenerComida()
+int generar_comida()
 {
     return random_int(2, 5);
 }
 
 /// Funcion para obtener recursos
-int obtenerRecursos()
+int generar_recursos()
 {
     return random_int(20, 30);
 }
@@ -56,7 +68,7 @@ int buscar_comida()
     int zona_buscar_comida;
     cin >> zona_buscar_comida;
 
-    int comida_obtenida = obtenerComida();
+    int comida_obtenida = generar_comida();
 
     switch (zona_buscar_comida)
     {
@@ -89,7 +101,8 @@ int buscar_recursos()
     int seleccion_zona_recursos;
     cin >> seleccion_zona_recursos;
 
-    int recursos_obtenidos = obtenerRecursos();
+    int recursos_obtenidos = generar_recursos();
+    modificar_progreso_refugio(recursos_obtenidos,jugador[]);
 
     switch (seleccion_zona_recursos)
     {
@@ -126,59 +139,6 @@ int buscar_recursos()
     return recursos_obtenidos;
 }
 
-/// ETAPA 3 RUTAS
-
-/// Tiempo base que lleva la ruta
-int tiempo_base_ruta()
-{
-    return random_int(15, 25);
-}
-
-/// Probabilidad del 50% en atrasarse X cantidad de horas
-int ruleta_atraso()
-{
-    int chance = random_int(1, 100);
-    if (chance > 50)
-    {
-        return random_int(3, 8);
-    }
-    else
-    {
-        return 0;
-    }
-}
-
-/// Probabilidad del 50% en recuperar X cantidad de horas
-int ruleta_avance()
-{
-    int chance = random_int(1, 100);
-    if (chance > 50)
-    {
-        return random_int(3, 7);
-    }
-    else
-    {
-        return 0;
-    }
-}
-
-/// Horas en llegar a destino
-int total_tiempo()
-{
-    int tiempo_avance = ruleta_avance();
-    int tiempo_atraso = ruleta_atraso();
-    int tiempo_recorrido = tiempo_base_ruta() + tiempo_atraso - tiempo_avance;
-
-    if (tiempo_recorrido < 24)
-    {
-        return tiempo_recorrido;
-    }
-    else
-    {
-        return 0;
-    }
-}
-
 void inicio_etapa_3()
 {
     cartel_avanza_etapa3();
@@ -189,7 +149,6 @@ void inicio_etapa_3()
 
     int tiempo_maximo = 24;
     int tiempo_recorrido = 0;
-    int kilometros_recorridos = 0;
 
     switch (seleccion_ruta)
     {
@@ -205,6 +164,9 @@ void inicio_etapa_3()
     }
 }
 
+///VECTORES -CAMBIOS A TENER EN CUENTA-
+///LA CONDICION DE UN JUGADOR DESCALIFICADO ES SI TOTAL_TIEMPO() DEVUELVE 0!!
+
 void jugadores_descalificados(int TAM, int jugador_numero[], string mensaje_calificado[])
 {
     int random = random_int(0, 1);
@@ -216,7 +178,7 @@ void jugadores_descalificados(int TAM, int jugador_numero[], string mensaje_cali
         {
             jugador_numero[i] = random;
         }
-        
+
         if (jugador_numero[i] == 0)
         {
             mensaje_calificado[i] = mensaje_descalificado;
